@@ -31,8 +31,8 @@
     <ul class="list-group">
       <% @reviews.each do |review| %>
         <li class="list-group-item d-flex">
-          <div class="col-10 p-0"><p><%= review.content %></p></div>
-          <div class="col-2"><p class="text-right">Rating: <%= review.rating %></p></div>
+          <div class="col-9 p-0"><p><%= review.content %></p></div>
+          <div class="col-3"><p class="text-right">Rating: <%= review.rating %></p></div>
         </li>
       <% end -%>
     </ul>
