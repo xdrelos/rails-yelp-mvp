@@ -10,6 +10,6 @@ class Restaurant < ApplicationRecord
     self.reviews.each do |review|
       sum += review.rating
     end
-    sum.to_f / self.reviews.size
+    (sum.to_f / self.reviews.size).round(2)
   end
 end

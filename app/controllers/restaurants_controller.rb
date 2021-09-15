@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @review = Review.new
+    @pagy, @reviews = pagy(@restaurant.reviews, items:3)
   end
 
   def new

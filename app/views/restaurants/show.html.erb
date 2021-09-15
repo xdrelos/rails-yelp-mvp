@@ -1,8 +1,14 @@
-<h1>Restaurant details</h1>
-<hr>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <%= @restaurant.name %>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <h1 class="text-center">Restaurant details</h1>
+    <hr>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= @restaurant.name %>
+    </div>
+
+  </div>
 </div>
+
 <div class="row justify-content-center mt-3">
   <div class="col-10">
     <ul class="list-group">
@@ -20,12 +26,13 @@
   </div>
 </div>
 <div class="row justify-content-center mt-3">
-  <div class="col-10">
+  <div class="col-10 m-0">
+    <%== pagy_bootstrap_nav(@pagy) %>
     <ul class="list-group">
-      <% @restaurant.reviews.each do |review| %>
+      <% @reviews.each do |review| %>
         <li class="list-group-item d-flex">
-          <div><%= review.content %></div>
-          <div class="ml-auto">Rating: <%= review.rating %></div>
+          <div class="col-10 p-0"><p><%= review.content %></p></div>
+          <div class="col-2"><p class="text-right">Rating: <%= review.rating %></p></div>
         </li>
       <% end -%>
     </ul>
