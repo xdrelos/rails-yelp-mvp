@@ -1,0 +1,41 @@
+<h1>Restaurant details</h1>
+<hr>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= @restaurant.name %>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-10">
+    <ul class="list-group">
+      <li class="list-group-item">Category: <%= @restaurant.category %></li>
+      <li class="list-group-item">Address: <%= @restaurant.address %></li>
+      <li class="list-group-item">Tel: <%= @restaurant.phone_number %></li>
+      <li class="list-group-item">Average rating: <%= @restaurant.avg_rating %></li>
+
+    </ul>
+  </div>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-1O">
+    <h3>Reviews</h3>
+  </div>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-10">
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item d-flex">
+          <div><%= review.content %></div>
+          <div class="ml-auto">Rating: <%= review.rating %></div>
+        </li>
+      <% end -%>
+    </ul>
+  </div>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-10 d-flex justify-content-center">
+    <h4>Add a review</h4>
+  </div>
+  <div class="col-10">
+    <%= render 'reviews/form' %>
+  </div>
+</div>

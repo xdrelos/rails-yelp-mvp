@@ -1,0 +1,22 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <h1 class="text-center">Restaurants</h1>
+    <hr>
+  </div>
+</div>
+
+  <% @restaurants.each do |restaurant| %>
+    <div class="row mb-3 justify-content-center">
+      <div class="card-product col-9 p-0">
+        <img src="https://source.unsplash.com/random?sig=<%= rand(1..100000) %>"  class="p-0"/>
+        <div class="card-product-infos">
+          <h2><%= restaurant.name %></h2>
+          <p>Category: <em><%= restaurant.category %></em></p>
+          <p>Rating: <%= restaurant.avg_rating %></p>
+        </div>
+        <div class="ml-auto mr-2 d-flex align-items-center">
+          <%= link_to 'Show', restaurant_path(restaurant), class: 'btn btn-primary rounded-pill' %>
+        </div>
+      </div>
+    </div>
+  <% end -%>
